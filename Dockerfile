@@ -2,32 +2,15 @@ FROM alpine:latest
 MAINTAINER Pablo G. <dev@pega.sh>
 
 RUN	apk upgrade --update && \
-	apk add libatomic \
-		readline \
-		readline-dev \
-		libxml2 \
-		libxml2-dev \
-		ncurses-terminfo-base \
-		ncurses-terminfo \
-		libxslt \
-		libxslt-dev \
-		zlib-dev \
-		zlib \
+	apk add \
 		ruby \
 		ruby-dev \
-		yaml \
-		yaml-dev \
+		ruby-json \
 		build-base \
 		git \
-		nodejs \
 		libffi \
 		libffi-dev \
-		build-base \
-		ruby-dev \
-		ruby-io-console \
-		ruby-irb \
-		ruby-json \
-		ruby-rake && \
+		build-base && \
 	gem install --no-document jekyll -v 2.5 && \
 	gem install --no-document \
 			bundler \
