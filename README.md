@@ -51,7 +51,7 @@ Once the container has been run for the first time, everything you should do to 
 $ sudo docker start mysite
 ```
 
-And that's it.
+And that's it. Consider running multiple containers (appropriately configured) if you're maintaining multiple sites.
 
 ### Debugging / other tasks
 
