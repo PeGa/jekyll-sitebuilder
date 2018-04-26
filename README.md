@@ -1,5 +1,5 @@
 # jekyll-sitebuilder
-A docker container based on alpine and jekyll intended to programmatically build jekyll-generated content as a command line application.
+A docker container based on alpine and jekyll designed to programmatically build jekyll-generated content as a command line application.
 
 ## Status
 
@@ -9,7 +9,7 @@ Fully functional, tested on an [adaptation](https://github.com/andrewbanchich/fo
 
 You have that desktop / server / device where you need to host or work with Jekyll and don't want to install and maintain a sane installation of Jekyll (or are unable to do it for whatever reason) and are in the need to maintain/build Jekyll content, like a website or a blog.
 
-This project provides docker-as-an-application cli util, and is able to build your content and output your compiled assets without messing with your host operating system.
+This project provides docker-as-an-application CLI util, and is able to build your content and generate your compiled assets without messing with your host operating system.
 
 ## Usage
 
@@ -23,7 +23,9 @@ $ sudo docker build . -t jekyll-builder
 
 ### Running it
 
-Once the image is built, you need to build the container with the appropriate parameters.
+Once the image is built, you need to run the container with the appropriate parameters.
+
+> Notice that this action will set up the Jekyll environment and it will generate content for the first time.
 
 ```
 $ sudo docker run --name mysite -v /path/to/mysite/jekyllsource:/site jekyll-builder
@@ -39,7 +41,7 @@ There are two important parameters here: `mysite` and `/path/to/mysite/jekyllsou
 
 `/path/to/mysite/jekyllsource` is the path where your current jekyll source code is located. Notice the syntax: After the path, there is a colon followed by "/site". 
 
-Don't modify /site, is used by the container to work with your source code.
+Don't modify "/site", is used by the container to work with your source code.
 
 ### Daily usage
 
@@ -53,10 +55,10 @@ And that's it.
 
 ### Debugging / other tasks
 
-If you need to perform other tasks and/or want to understand how the jekyll installation works, you will need to run the following:
+If you need to perform other tasks and/or want to understand how the Jekyll installation works, you will need to run the following:
 
 ```
-$ sudo docker run -it --name mysite -v /path/to/mysite/jekyllsource:/site jekyll-builder /sh
+$ sudo docker run -it --name mysite -v /path/to/mysite/jekyllsource:/site jekyll-builder /bin/sh
 ```
 
 Remember to change names and paths as appropriate (See "Running it").
