@@ -1,6 +1,5 @@
 FROM alpine:latest
 MAINTAINER Pablo G. <dev@pega.sh>
-
 RUN	apk upgrade --update && \
 	apk add \
 		ruby \
@@ -18,4 +17,7 @@ RUN	apk upgrade --update && \
 			/tmp/* \
 			/usr/share/man \
 			/var/cache/apk/* 
-CMD /bin/bash
+COPY	run.sh	/usr/local/bin/run.sh
+WORKDIR /site
+
+CMD	/usr/local/bin/run.sh
