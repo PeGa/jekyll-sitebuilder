@@ -5,9 +5,6 @@ RUN	apk upgrade --update && \
 		ruby \
 		ruby-dev \
 		ruby-json \
-		ruby-webrick \
-		ruby-bigdecimal \
-		ruby-etc \
 		build-base \
 		git \
 		libffi \
